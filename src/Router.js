@@ -3,6 +3,7 @@ import React from 'react';
 import { Suspense } from 'react';
 import Loading from './components/Loading';
 const Intro = React.lazy(() => import('./pages/Intro'));
+const Aboutme = React.lazy(() => import('./pages/Aboutme'))
 
 function Router() {
     return (
@@ -10,6 +11,7 @@ function Router() {
             <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route path='/' element={<Intro />}></Route>
+                    <Route path='/aboutme' element={<Aboutme />}></Route>
                 </Routes>
             </Suspense>
         </BrowserRouter>

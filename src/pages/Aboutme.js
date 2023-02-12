@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Browser from "../assets/img/Group 1.png"
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -7,13 +7,12 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 60px;
 `;
-
-function Loading() {
-    return (
+function Aboutme() {
+    return (    
         <Wrapper>
-            <img src={Browser} alt="monet" />
+            This page will be about Me Myself and I
         </Wrapper>
     )
 }
 
-export default Loading
+export default Aboutme

@@ -11,6 +11,7 @@ function Aboutme() {
     return (    
         <Wrapper>
             This page will be about Me Myself and I
+            I want to be programmer
         </Wrapper>
     )
 }

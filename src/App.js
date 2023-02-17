@@ -66,7 +66,7 @@ table {
 * {
   user-select: none;
   box-sizing: border-box;
-  font-family: "Noto Sans KR",sans-serif !important;
+  font-family: Raleway, "Noto Sans KR",sans-serif !important;
   letter-spacing: 0.3px;
 }
 *::selection {

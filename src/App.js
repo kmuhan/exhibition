@@ -1,5 +1,5 @@
 import './App.css'
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import Router from './Router';
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
-  font-family: "Raleway"
-  src: url("./fonts/Raleway-Light.ttf")
+  font-family: 'Raleway';
+  src: url("fonts/Raleway-Light.ttf");
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

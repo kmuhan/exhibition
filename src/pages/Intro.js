@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Monet from "../assets/img/monet.png"
+import Parasol from "../assets/img/parasol.jpg"
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 60px;
+  color: black;
 `;
 const BlogTitle = styled.div`
     font-size: 50px;
@@ -29,7 +30,7 @@ function Intro() {
     return (    
         <Wrapper>
             <BlogTitle className="">EXHIBITION</BlogTitle>
-            <Img src={Monet} alt="monet" onClick={onClickAboutme}/>
+            <Img src={Parasol} alt="women with parasol" onClick={onClickAboutme}/>
             <BlogMenu onClick={onClickLatest}>Latest</BlogMenu>
         </Wrapper>
     )

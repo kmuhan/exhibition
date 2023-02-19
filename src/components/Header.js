@@ -1,14 +1,20 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 function Header() {
 
     const Wrapper = styled.div`
-        display: flex
-        backgound-color: 
+        padding-top: 25px;
+        padding-bottom: 25px;
+        display: flex;
+        background-color: #F7EDDB;
+    `
+    const HeaderTitle = styled.div`
+        color: black;
     `
     return (
         <Wrapper>
-            EXHIBITION
+            <Link to={"/"}><HeaderTitle>HAN</HeaderTitle></Link>
         </Wrapper>
     )
 }

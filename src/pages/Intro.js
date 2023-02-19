@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Parasol from "../assets/img/parasol.jpg"
 
 const Wrapper = styled.div`
@@ -20,18 +20,11 @@ const Img = styled.img`
     width: 300px;
 `
 function Intro() {
-    const navigate = useNavigate()
-    const onClickAboutme = () => {
-        navigate("/aboutme")
-    }
-    const onClickLatest = () => {
-        navigate("/latest")
-    }
     return (    
         <Wrapper>
             <BlogTitle className="">EXHIBITION</BlogTitle>
-            <Img src={Parasol} alt="women with parasol" onClick={onClickAboutme}/>
-            <BlogMenu onClick={onClickLatest}>Latest</BlogMenu>
+            <Link to={"/aboutme"} preventScrollReset={true}><Img src={Parasol} alt="women with parasol"/></Link>
+            <Link to={"/latest"} preventScrollReset={true}><BlogMenu>Latest</BlogMenu></Link>
         </Wrapper>
     )
 }

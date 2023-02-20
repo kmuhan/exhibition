@@ -13,8 +13,7 @@ const Exhibition = React.lazy(() => import('./pages/Exhibition'))
 
 const ContentsStyle = styled.div`
     height: auto;
-    min-height: 100%;
-    padding-bottom: 5vh;
+    position: relative;
 `
 
 function Router() {

@@ -73,8 +73,7 @@ table {
   background: rgba(35, 131, 226, 0.28);
 }
 body {
-  display: "flex"; 
-  flex-direction: "column";
+  height: 100%;
   background-color: #DAE2B6;
   color:#ffffff;
   transition: 0.2s background-color, 0.2s color;

@@ -1,9 +1,8 @@
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-    height: 5vh;
-    position : relative;
-    transform : translateY(-100%);
+    position: relative;
+    transform: translatY(-100%);
 `
 const Contents = styled.div`
     color: black;

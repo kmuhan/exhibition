@@ -4,21 +4,32 @@ import { Suspense } from 'react';
 import Loading from './components/Loading';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import styled from 'styled-components';
 
 const Intro = React.lazy(() => import('./pages/Intro'));
 const Aboutme = React.lazy(() => import('./pages/Aboutme'))
 const Latest = React.lazy(() => import('./pages/Latest'))
+const Exhibition = React.lazy(() => import('./pages/Exhibition'))
+
+const ContentsStyle = styled.div`
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 5vh;
+`
 
 function Router() {
     return (
         <BrowserRouter>
             <Suspense fallback={<Loading />}>
                 <Header/>
-                <Routes>
-                    <Route path='/' element={<Intro />}></Route>
-                    <Route path='/aboutme' element={<Aboutme />}></Route>
-                    <Route path='/latest' element={<Latest/>}></Route>
-                </Routes>
+                <ContentsStyle>
+                    <Routes>
+                        <Route path='/' element={<Intro />}></Route>
+                        <Route path='/aboutme' element={<Aboutme />}></Route>
+                        <Route path='/latest' element={<Latest/>}></Route>
+                        <Route path='/exhibition' element={<Exhibition/>}></Route>
+                    </Routes>
+                </ContentsStyle>
                 <Footer/>
             </Suspense>
         </BrowserRouter>

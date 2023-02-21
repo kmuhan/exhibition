@@ -2,15 +2,6 @@ import './App.css'
 import { createGlobalStyle } from 'styled-components';
 import Router from './Router';
 
-function App() {
-  return (
-    <>
-      <GlobalStyle/>
-        <Router />
-    </>
-  );
-}
-
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Raleway';
@@ -22,46 +13,46 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, menu, ol, ul, li,
+dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-  display: block;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
     display: none;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
-menu, ol, ul {
-  list-style: none;
+ol, ul {
+	list-style: none;
 }
 blockquote, q {
-  quotes: none;
+	quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 * {
   user-select: none;
@@ -72,17 +63,27 @@ table {
 *::selection {
   background: rgba(35, 131, 226, 0.28);
 }
-body {
-  height: 100%;
-  background-color: #DAE2B6;
-  color:#ffffff;
-  transition: 0.2s background-color, 0.2s color;
-  overflow: auto
-}
 a {
   text-decoration:none;
   color: inherit;
 }
+body {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+body, #root {
+  height: 100vh;
+}
 `
+
+function App() {
+  return (
+    <>
+      <GlobalStyle/>
+        <Router />
+    </>
+  );
+}
 
 export default App;

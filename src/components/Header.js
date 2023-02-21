@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-function Header() {
+const Wrapper = styled.div`
+height: 8vh;
+display: flex;
+padding-top: 25px;
+padding-bottom: 25px;
+background-color: #F7EDDB;
+justify-content: space-evenly;
+`
+const HeaderTitle = styled.div`
+color: black;
+`
+const HeaderNav = styled.div`
+color: black;
+`
 
-    const Wrapper = styled.div`
-        display: flex;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background-color: #F7EDDB;
-        justify-content: space-evenly;
-    `
-    const HeaderTitle = styled.div`
-        color: black;
-    `
-    const HeaderNav = styled.div`
-        color: black;
-    `
+function Header() {
     return (
         <Wrapper>
             <Link to={"/"}><HeaderTitle>HAN</HeaderTitle></Link>

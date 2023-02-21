@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-    position: relative;
-    transform: translatY(-100%);
+    height: 5vh
+    padding: 10px;
+    background-color: #F7EDDB;
 `
 const Contents = styled.div`
     color: black;
-    background-color: #F7EDDB;
     
 `
 

@@ -6,10 +6,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  height: 100%;
+  padding-top: 5vh;
+  background-color: #274962;
 `;
 const Img = styled.img`
-    width: 50vw;
+    width: 50%;
 `
 const Contents = styled.div`
     font-size = 20px

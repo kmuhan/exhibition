@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
 `;
 function Latest() {
     return (    

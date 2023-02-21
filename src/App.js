@@ -4,9 +4,9 @@ import Router from './Router';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
-  font-family: 'Raleway';
-  src: url("fonts/Raleway-Light.ttf");
-}
+  font-family: Gloock;
+  src: url("./fonts/Gloock-Regular.ttf") format('ttf');
+};
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,7 +57,6 @@ table {
 * {
   user-select: none;
   box-sizing: border-box;
-  font-family: Raleway, "Noto Sans KR",sans-serif !important;
   letter-spacing: 0.3px;
 }
 *::selection {
@@ -69,11 +68,9 @@ a {
 }
 body {
   overflow: auto;
-  display: flex;
-  flex-direction: column;
 }
-body, #root {
-  height: 100vh;
+html, body, #root {
+  height: 100%;
 }
 `
 

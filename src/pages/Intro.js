@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Parasol from "../assets/img/parasol.jpg"
 
 const Wrapper = styled.div`
+    height: auto;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -10,14 +11,14 @@ const Wrapper = styled.div`
     align-items: center;
     margin: auto;
     background-color: #DAE2B6;
+    font-family: Gloock;
 `;
 const BlogTitle = styled.div`
     color: black;
     font-size: 50px;
 `
 const IntroImg = styled.img`
-    color: black;
-    width: 300px;
+    width: 50vh;
 `
 function Intro() {
     return (    

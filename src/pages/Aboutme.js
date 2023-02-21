@@ -2,11 +2,13 @@ import styled from "styled-components";
 import monetBrowser from "../assets/img/Group 1.png"
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
 `;
 const Img = styled.img`
     width: 300px;

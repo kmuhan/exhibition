@@ -2,13 +2,14 @@ import styled from "styled-components";
 import parasolImg from "../assets/img/sokcho_parasol.png"
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-top: 5vh;
-  background-color: #274962;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    background-color: #274962;
 `;
 const Img = styled.img`
     width: 50%;

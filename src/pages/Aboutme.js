@@ -2,8 +2,8 @@ import styled from "styled-components";
 import monetBrowser from "../assets/img/Group 1.png"
 
 const Wrapper = styled.div`
-    height: auto;
-    min-height: 100%;
+    height: fit-content;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -12,7 +12,8 @@ const Latest = React.lazy(() => import('./pages/Latest'))
 const Exhibition = React.lazy(() => import('./pages/Exhibition'))
 
 const ContentsStyle = styled.div`
-    height: 100%;
+    height: fit-content;
+    min-height: 100%;
 `
 
 function Router() {

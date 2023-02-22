@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Parasol from "../assets/img/parasol.jpg"
 
 const Wrapper = styled.div`
-    height: auto;
-    min-height: 100%;
+    height: fit-content;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

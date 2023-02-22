@@ -71,6 +71,7 @@ body {
 }
 html, body, #root {
   height: 100%;
+  min-height: 100vh;
 }
 `
 

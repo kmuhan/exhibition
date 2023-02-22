@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-    height: auto;
-    min-height: 100%;
+    height: fit-content;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

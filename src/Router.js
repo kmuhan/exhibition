@@ -10,6 +10,7 @@ const Intro = React.lazy(() => import('./pages/Intro'));
 const Aboutme = React.lazy(() => import('./pages/Aboutme'))
 const Latest = React.lazy(() => import('./pages/Latest'))
 const Exhibition = React.lazy(() => import('./pages/Exhibition'))
+const Reppy = React.lazy(() => import('./pages/Reppy'))
 
 const ContentsStyle = styled.div`
     height: fit-content;
@@ -27,6 +28,7 @@ function Router() {
                         <Route path='/aboutme' element={<Aboutme />}></Route>
                         <Route path='/latest' element={<Latest/>}></Route>
                         <Route path='/exhibition' element={<Exhibition/>}></Route>
+                        <Route path='/reppy' element={<Reppy/>}></Route>
                     </Routes>
                 </ContentsStyle>
                 <Footer/>

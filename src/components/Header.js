@@ -35,6 +35,7 @@ function Header() {
             ><HeaderNav>EXHIBITION</HeaderNav></NavLink>
             <NavLink to={"/latest"}><HeaderNav>Latest</HeaderNav></NavLink>
             <NavLink to={"/aboutme"}><HeaderNav>Portfolio</HeaderNav></NavLink>
+            <NavLink to={"/reppy"}><HeaderNav>REPPY</HeaderNav></NavLink>
         </Wrapper>
     )
 }

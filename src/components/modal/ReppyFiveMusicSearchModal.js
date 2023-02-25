@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useCallback } from "react";
 import axios from "axios";
 
-function ReppyFiveMusicSearchModal({ setModalOpen, songTitle }) {
+function ReppyFiveMusicSearchModal({ setSearchModalOpen, songTitle }) {
     const [songList, setSongList] = useState()
     const getSong = useCallback(async () => {
         try {
@@ -31,7 +31,7 @@ function ReppyFiveMusicSearchModal({ setModalOpen, songTitle }) {
     
     `
     const closeModal = () => {
-        setModalOpen(false);
+        setSearchModalOpen(false);
     };
     console.log(songList)
     return (

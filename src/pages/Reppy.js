@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     min-height: 100vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -37,6 +38,12 @@ function Reppy() {
         setModalOpen(true);
     };
 
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+          showModal(); // Enter 입력이 되면 클릭 이벤트 실행
+        }
+      };
+
     return (    
         <Wrapper>
             <ReppyLogoImg src={ReppyLogo} alt="ReppyFiveLogo"/>
@@ -45,6 +52,7 @@ function Reppy() {
                 value={songTitle}
                 onChange={changeSongTitle}
                 placeholder="Enter the title:)"
+                onKeyDown={handleOnKeyPress}
                 />
                 <Button width="10px" onClick={showModal} >Enter</Button>
             </Contents>

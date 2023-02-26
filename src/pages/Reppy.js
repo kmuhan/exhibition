@@ -48,6 +48,15 @@ const ReppyLogoImg = styled.img`
 const SongInput = styled.input`
 
 `
+
+const ModalBackGround = styled.div`
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+backdrop-filter: blur(5px);
+`
 function Reppy() {
     const [makePlaylistModalOpen, setMakePlaylistModalOpen] = useState(false);
     const showMakePlaylistModal = () => {
@@ -57,7 +66,7 @@ function Reppy() {
     const [songTitle, setSongTitle] = useState("");
     const changeSongTitle = e => {
         setSongTitle(e.target.value);
-    };
+    };  
 
     const [searchModalOpen, setSearchModalOpen] = useState(false);
     const showSearchModal = () => {
@@ -78,10 +87,7 @@ function Reppy() {
     const outside = useRef();
     
     return (    
-        <Wrapper
-            ref={outside}
-            onClick={onMaskClick}
-        >
+        <Wrapper>
             <ReppyLogoImg src={ReppyLogo} alt="ReppyFiveLogo"/>
             <AddButton onClick={showMakePlaylistModal}>
                 <svg fill="#ffffff" width="30%" height="30%" viewBox="-5.6 -5.6 67.20 67.20" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
@@ -94,9 +100,13 @@ function Reppy() {
                 <AddTitle>Make Reppy Playlist</AddTitle>
             </AddButton>
             {makePlaylistModalOpen &&
-                <ReppyFiveMakePlaylistmodal
-                setMakePlaylistModalOpen = {setMakePlaylistModalOpen}
-                />
+                <ModalBackGround             
+                ref={outside}
+                onClick={onMaskClick}>
+                    <ReppyFiveMakePlaylistmodal
+                    setMakePlaylistModalOpen = {setMakePlaylistModalOpen}
+                    />
+                </ModalBackGround>
             }
             <Contents>
                 <SongInput

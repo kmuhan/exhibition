@@ -40,7 +40,7 @@ function ReppyFiveMusicSearchModal({ setSearchModalOpen, songTitle }) {
             {songList !== undefined &&
             <List>
                 {songList.results.map((item) => (
-                    <Li>{item.trackName}, {item.artistName}</Li>
+                    <Li key={item.trackId}>{item.trackName}, {item.artistName}</Li>
                 ))}
             </List>}
         </Modal>

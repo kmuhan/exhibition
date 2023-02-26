@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ModalWrapper = styled.div`
     position: fixed;
@@ -11,6 +11,18 @@ const ModalWrapper = styled.div`
     width: 40vh;
     background-color: white;
 `
+
+const InputImgButton = styled.input`
+
+`
+
+const InputImgPreview = styled.div`
+
+`
+const InputImg = styled.img`
+
+`
+
 
 function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     //prevent scroll
@@ -26,10 +38,31 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
           window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
         };
       }, []);
+    
+    const [imageSrc, setImageSrc] = useState('');
+
+    const encodeFileToBase64 = (fileBlob) => {
+      const reader = new FileReader();
+        reader.readAsDataURL(fileBlob);
+        return new Promise((resolve) => {
+          reader.onload = () => {
+            setImageSrc(reader.result);
+            resolve();
+          };
+        });
+      };
       
     return(
         <ModalWrapper>
-            gogo
+            <InputImgButton
+            type="file"
+            onChange={(e) => {
+              encodeFileToBase64(e.target.files[0]);
+            }}
+            />
+            <InputImgPreview>
+              {imageSrc && <InputImg src={imageSrc} alt="preview-image"/>}
+            </InputImgPreview>
         </ModalWrapper>
     );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { Button } from "../style";
+import { Button, Li } from "../style";
 import ReppyFiveMusicSearchModal from "./ReppyFiveMusicSearchModal";
 
 const ModalWrapper = styled.div`
@@ -12,9 +12,9 @@ const ModalWrapper = styled.div`
     height: 40vh;
     width: 40vh;
     background-color: white;
+    border-radius: 3em;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
 `
 
@@ -49,6 +49,16 @@ const SongInput = styled.input`
 
 `;
 
+const ListConfig = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const SearchArea = styled.div`
+  height: inherit;
+`
+
 function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     //prevent scroll
     useEffect(() => {
@@ -74,6 +84,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     const changeSongTitle = e => {
         setSongTitle(e.target.value);
     };  
+    const [playlist, setPlaylist] = useState([]);
 
     const handleOnKeyPress = e => {
       if (e.key === 'Enter') {
@@ -94,6 +105,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
       
     return(
         <ModalWrapper>
+          <ListConfig>
             <InputImgButton>
               <label htmlFor="ex_file">
                 <div className="btnStart">
@@ -114,6 +126,16 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
             </InputImgPreview>
             <InputTitle type="text" placeho0lder="Enter Title:)"/>
             <InputTitle type="text" placeho0lder="Show about your playlist:)"/>
+            {playlist !== undefined &&
+            playlist.map((song) => (
+              <Li key={song.id}>
+                <img src={song.artwork} alt="artWork" className="albumImg"/>
+                <div >{song.trackname}</div>
+                <div>{song.artistname}</div>
+              </Li>
+            ))}
+          </ListConfig> 
+          <SearchArea>
             <Contents>
                 <SongInput
                 value={songTitle}
@@ -126,7 +148,10 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
             {searchModalOpen && <ReppyFiveMusicSearchModal 
             setSearchModalOpen={setSearchModalOpen}
             songTitle = {songTitle}
+            playlist = {playlist}
+            setPlaylist = {setPlaylist}
             />}
+          </SearchArea>
         </ModalWrapper>
     );
 }

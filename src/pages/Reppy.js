@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import ReppyLogo from "../assets/logo/ReppyFive.png";
-import ReppyFiveMusicSearchModal from "../components/modal/ReppyFiveMusicSearchModal"
 import ReppyFiveMakePlaylistmodal from "../components/modal/ReppyFiveMakePlaylistModal";
 import { useState, useRef } from "react";
-import { Button } from "../components/style";
 
 const Wrapper = styled.div`
     height: fit-content;
@@ -37,17 +35,10 @@ const AddTitle = styled.p`
     font-weight: bold;
 `
 
-const Contents = styled.div`
-
-`;
-
 const ReppyLogoImg = styled.img`
 
 `;
 
-const SongInput = styled.input`
-
-`
 
 const ModalBackGround = styled.div`
 position: absolute;
@@ -63,21 +54,6 @@ function Reppy() {
         setMakePlaylistModalOpen(true);
     };
 
-    const [songTitle, setSongTitle] = useState("");
-    const changeSongTitle = e => {
-        setSongTitle(e.target.value);
-    };  
-
-    const [searchModalOpen, setSearchModalOpen] = useState(false);
-    const showSearchModal = () => {
-        setSearchModalOpen(true);
-    };
-    const handleOnKeyPress = e => {
-        if (e.key === 'Enter') {
-            showSearchModal(); // Enter 입력이 되면 클릭 이벤트 실행
-        }
-      };
-
     const onMaskClick = (e) => {
         if (e.target === outside.current) {
             setMakePlaylistModalOpen(false)
@@ -86,7 +62,7 @@ function Reppy() {
     
     const outside = useRef();
     
-    return (    
+    return (
         <Wrapper>
             <ReppyLogoImg src={ReppyLogo} alt="ReppyFiveLogo"/>
             <AddButton onClick={showMakePlaylistModal}>
@@ -108,19 +84,6 @@ function Reppy() {
                     />
                 </ModalBackGround>
             }
-            <Contents>
-                <SongInput
-                value={songTitle}
-                onChange={changeSongTitle}
-                placeholder="Enter the title or the Artist :)"
-                onKeyDown={handleOnKeyPress}
-                />
-                <Button width="10px" onClick={showSearchModal} >Enter</Button>
-            </Contents>
-            {searchModalOpen && <ReppyFiveMusicSearchModal 
-            setSearchModalOpen={setSearchModalOpen}
-            songTitle = {songTitle}
-            />}
         </Wrapper>
     )
 }

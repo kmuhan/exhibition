@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { Button } from "../style";
+import ReppyFiveMusicSearchModal from "./ReppyFiveMusicSearchModal";
 
 const ModalWrapper = styled.div`
     position: fixed;
@@ -10,10 +12,23 @@ const ModalWrapper = styled.div`
     height: 40vh;
     width: 40vh;
     background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
-const InputImgButton = styled.input`
-
+const InputImgButton = styled.div`
+  input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 `
 
 const InputImgPreview = styled.div`
@@ -21,8 +36,18 @@ const InputImgPreview = styled.div`
 `
 const InputImg = styled.img`
 
-`
+`;
 
+const InputTitle = styled.input`
+
+`;
+const Contents = styled.div`
+
+`;
+
+const SongInput = styled.input`
+
+`;
 
 function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     //prevent scroll
@@ -40,6 +65,21 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
       }, []);
     
     const [imageSrc, setImageSrc] = useState('');
+    const [searchModalOpen, setSearchModalOpen] = useState(false);
+    const showSearchModal = () => {
+        setSearchModalOpen(true);
+    };
+
+    const [songTitle, setSongTitle] = useState("");
+    const changeSongTitle = e => {
+        setSongTitle(e.target.value);
+    };  
+
+    const handleOnKeyPress = e => {
+      if (e.key === 'Enter') {
+          showSearchModal(); // Enter 입력이 되면 클릭 이벤트 실행
+      }
+    };
 
     const encodeFileToBase64 = (fileBlob) => {
       const reader = new FileReader();
@@ -54,15 +94,39 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
       
     return(
         <ModalWrapper>
-            <InputImgButton
-            type="file"
-            onChange={(e) => {
-              encodeFileToBase64(e.target.files[0]);
-            }}
-            />
+            <InputImgButton>
+              <label htmlFor="ex_file">
+                <div className="btnStart">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 30px 30px"><path fill="currentColor" d="M20 5h-3.17l-1.24-1.35A1.99 1.99 0 0 0 14.12 3H9.88c-.56 0-1.1.24-1.47.65L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-3 12H7a.5.5 0 0 1-.4-.8l2-2.67c.2-.27.6-.27.8 0L11.25 16l2.6-3.47c.2-.27.6-.27.8 0l2.75 3.67a.5.5 0 0 1-.4.8z"/></svg>
+                </div>
+              </label>
+              <input
+                type="file"
+                id="ex_file"
+                onChange={(e) => {
+                  encodeFileToBase64(e.target.files[0]);
+                }}
+                placeholder="Put your cover:)"
+              />
+            </InputImgButton>
             <InputImgPreview>
               {imageSrc && <InputImg src={imageSrc} alt="preview-image"/>}
             </InputImgPreview>
+            <InputTitle type="text" placeho0lder="Enter Title:)"/>
+            <InputTitle type="text" placeho0lder="Show about your playlist:)"/>
+            <Contents>
+                <SongInput
+                value={songTitle}
+                onChange={changeSongTitle}
+                placeholder="Enter the title or the Artist :)"
+                onKeyDown={handleOnKeyPress}
+                />
+                <Button width="10px" onClick={showSearchModal} >Enter</Button>
+            </Contents>
+            {searchModalOpen && <ReppyFiveMusicSearchModal 
+            setSearchModalOpen={setSearchModalOpen}
+            songTitle = {songTitle}
+            />}
         </ModalWrapper>
     );
 }

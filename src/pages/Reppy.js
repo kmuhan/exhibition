@@ -27,6 +27,10 @@ const AddButton = styled.div`
     border-radius: 10px;
     margin: 5%;
     cursor: pointer;
+    &:hover{
+        transition: 0.2s;
+        opacity: 0.8;
+      }
 `
 
 const AddTitle = styled.p`

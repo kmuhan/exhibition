@@ -5,6 +5,16 @@ import { useCallback } from "react";
 import { Li } from "../style";
 import axios from "axios";
 
+const Modal = styled.div`
+width: 100%;
+height: 100%;
+background-color: #ffffff;
+overflow: auto;
+`
+const List = styled.ul`
+
+`
+
 function ReppyFiveMusicSearchModal({ setSearchModalOpen, songTitle, playlist, setPlaylist}) {
     const [songList, setSongList] = useState()
     const getSong = useCallback(async () => {
@@ -20,15 +30,6 @@ function ReppyFiveMusicSearchModal({ setSearchModalOpen, songTitle, playlist, se
         getSong();
     }, [songTitle])
 
-    const Modal = styled.div`
-        width: 100%;
-        height: 100%;
-        background-color: #ffffff;
-        overflow: auto;
-    `
-    const List = styled.ul`
-
-    `
     const closeModal = () => {
         setSearchModalOpen(false);
     };

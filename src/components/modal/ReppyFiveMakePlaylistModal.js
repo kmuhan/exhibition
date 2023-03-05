@@ -84,6 +84,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     const changeSongTitle = e => {
         setSongTitle(e.target.value);
     };  
+    
     const [playlist, setPlaylist] = useState([]);
 
     const handleOnKeyPress = e => {

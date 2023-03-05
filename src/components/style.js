@@ -10,6 +10,7 @@ const Li = styled.li`
 display: flex;
 flex-direction: column;
 cursor: pointer;
+width: 100%;
 &:hover{  
     background-color : rgba(0, 0, 0, 0.3);
   }

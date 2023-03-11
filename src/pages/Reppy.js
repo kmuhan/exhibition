@@ -3,6 +3,7 @@ import ReppyLogo from "../assets/logo/ReppyFive.png";
 import ReppyFiveMakePlaylistmodal from "../components/modal/ReppyFiveMakePlaylistModal";
 import { useState, useRef } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Wrapper = styled.div`
     height: fit-content;
@@ -66,9 +67,11 @@ function Reppy() {
     };
 
     const callApi = async () => {
-        axios.get("/api").then((res) => console.log(res.data.test))
+        axios.get("/api/").then((res) => console.log(res.data.test))
     }
-    callApi();
+    useEffect(()=> {
+        callApi();
+    }, [])
     
     const outside = useRef();
     

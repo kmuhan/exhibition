@@ -41,7 +41,7 @@ function ReppyFiveMusicSearchModal({ setSearchModalOpen, songTitle, playlist, se
             trackname: item.trackName,
             artistname: item.artistName
         }
-        setPlaylist([newSong ,...playlist])
+        playlist.length > 4 ? alert("choidae 5gae") : setPlaylist([newSong ,...playlist])
     }
 
     return (

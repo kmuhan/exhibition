@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Button, Li } from "../style";
 import ReppyFiveMusicSearchModal from "./ReppyFiveMusicSearchModal";
+import axios from "axios";
 
 const ModalWrapper = styled.div`
     position: fixed;
@@ -89,7 +90,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
 
     const handleOnKeyPress = e => {
       if (e.key === 'Enter') {
-          showSearchModal(); // Enter 입력이 되면 클릭 이벤트 실행
+          showSearchModal();
       }
     };
 
@@ -103,6 +104,10 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
           };
         });
       };
+    
+    useEffect(() => {
+      
+      }, [playlist])
       
     return(
         <ModalWrapper>

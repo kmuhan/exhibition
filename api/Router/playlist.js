@@ -20,9 +20,11 @@ router.get("/playlists/:id", (req, res) => {
     res.send(playlist);
 })
 
-router.put("/api/playlist", (req, res) => {
-  const playlist = req.body
+router.post("/playlists", (req, res) => {
+  let playlist = req.body
+  console.log(req)  
   playlists = [...playlists, playlist];
+  res.send(playlists)
 })
 
 module.exports = router;

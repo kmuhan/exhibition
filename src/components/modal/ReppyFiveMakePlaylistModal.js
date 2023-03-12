@@ -105,10 +105,23 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
         });
       };
     
-    useEffect(() => {
-      
-      }, [playlist])
-      
+    const postClick = () => {
+      if (playlist.length === 5) {
+        let obj = {};
+        playlist.map((item, index) => obj[index] = item)
+        const data = JSON.stringify({playlist_obj: obj})
+        axios.post("/api/playlists" , data).then(
+          function (response) { console.log(response);}
+          )
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+      else {
+        alert("not five")
+      }
+    }
+
     return(
         <ModalWrapper>
           <ListConfig>
@@ -140,6 +153,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
                 <div>{song.artistname}</div>
               </Li>
             ))}
+            <button onClick={postClick}>Post</button>
           </ListConfig> 
           <SearchArea>
             <Contents>

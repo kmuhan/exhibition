@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router();
 
-
 let playlists = [
 
   ];
@@ -21,10 +20,9 @@ router.get("/playlists/:id", (req, res) => {
 })
 
 router.post("/playlists", (req, res) => {
-  let playlist = req.body
-  console.log(req)  
-  playlists = [...playlists, playlist];
-  res.send(playlists)
+  let playlist = req
+  // playlists = [...playlists, playlist];
+  console.log(playlist);
 })
 
 module.exports = router;

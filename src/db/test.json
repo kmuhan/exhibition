@@ -1,0 +1,34 @@
+{
+  "songs": [
+    {
+      "id": 1607998649,
+      "artwork": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/c2/e0/8a/c2e08ad0-81e7-5c57-d006-5e5241a56d93/cover.jpg/100x100bb.jpg",
+      "trackname": "Psot",
+      "artistname": "Wakended"
+    },
+    {
+      "id": 1586605040,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/85/bd/f8/85bdf8fd-20ab-c5ff-9962-a9e2fe6b5b7f/Krakowski_Cho_r_Dziecie_cy_-_Kot_pe_en_psot_COVER.jpg/100x100bb.jpg",
+      "trackname": "Kot Pełen Psot! (feat. Nela Zawadzka)",
+      "artistname": "Krakowski Chór Dziecięcy"
+    },
+    {
+      "id": 1578623454,
+      "artwork": "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/2e/73/61/2e7361da-e122-a9f4-0fae-930e3d3c4717/artwork.jpg/100x100bb.jpg",
+      "trackname": "Matatan (feat. P.SOT)",
+      "artistname": "Mattizze"
+    },
+    {
+      "id": 1587779098,
+      "artwork": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/a4/90/a8/a490a85a-9848-fe4f-805a-108ce86204aa/artwork.jpg/100x100bb.jpg",
+      "trackname": "Perreo X Fun (feat. P.sot)",
+      "artistname": "Peta"
+    },
+    {
+      "id": 1588395058,
+      "artwork": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/4e/18/5f/4e185fe3-d968-c191-1b95-5ca2745f83d9/Krakowski_Cho_r_Dziecie_cy_-_Zatrzymany_S_wiat_COVER.jpg/100x100bb.jpg",
+      "trackname": "Kot Pełen Psot! (feat. Nela Zawadzka)",
+      "artistname": "Krakowski Chór Dziecięcy"
+    }
+  ]
+}

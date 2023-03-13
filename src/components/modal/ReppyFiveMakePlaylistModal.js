@@ -107,12 +107,17 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
     
     const postClick = () => {
       if (playlist.length === 5) {
-        let obj = {};
-        playlist.map((item, index) => obj[index] = item)
-        const data = JSON.stringify({playlist_obj: obj})
-        axios.post("/api/playlists" , data).then(
-          function (response) { console.log(response);}
-          )
+        axios.post("/api/playlists" , {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: {
+          songs: playlist
+          },
+        })
+        .then( function (response) { 
+          console.log(response.data);
+        })
         .catch(function (error) {
           console.log(error);
         });

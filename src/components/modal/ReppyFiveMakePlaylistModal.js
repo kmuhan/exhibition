@@ -86,6 +86,11 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
         setSongTitle(e.target.value);
     };  
     
+    const [playlistTitle, setPlaylistTitle] = useState("")
+    const changePlaylistTitle = e => {
+      setPlaylistTitle(e.target.value)
+    }
+
     const [playlist, setPlaylist] = useState([]);
 
     const handleOnKeyPress = e => {
@@ -106,17 +111,15 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
       };
     
     const postClick = () => {
+      const title = JSON.stringify(playlistTitle)
       if (playlist.length === 5) {
-        axios.post("/api/playlists" , {
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: {
-          songs: playlist
-          },
+        axios.post("/api/playlists", 
+        {[title]: playlist},
+        {headers: {
+            'Content-Type': `application/json`}
         })
         .then( function (response) { 
-          console.log(response.data);
+          console.log(response);
         })
         .catch(function (error) {
           console.log(error);
@@ -148,8 +151,8 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
             <InputImgPreview>
               {imageSrc && <InputImg src={imageSrc} alt="preview-image"/>}
             </InputImgPreview>
-            <InputTitle type="text" placeho0lder="Enter Title:)"/>
-            <InputTitle type="text" placeho0lder="Show about your playlist:)"/>
+            <InputTitle type="text" placeholder="Enter Title:)"/>
+            <InputTitle type="text" onChange={changePlaylistTitle} placeholder="Show about your playlist:)"/>
             {playlist !== undefined &&
             playlist.map((song) => (
               <Li key={song.id}>

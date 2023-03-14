@@ -20,9 +20,9 @@ router.get("/playlists/:id", (req, res) => {
 })
 
 router.post("/playlists", (req, res) => {
-  let playlist = req
-  // playlists = [...playlists, playlist];
-  console.log(playlist);
+  let playlist = req.body
+  playlists = [...playlists, playlist];
+  res.send(playlist)
 })
 
 module.exports = router;

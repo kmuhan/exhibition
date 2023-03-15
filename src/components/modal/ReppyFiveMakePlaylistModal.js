@@ -111,7 +111,7 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
       };
     
     const postClick = () => {
-      const title = JSON.stringify(playlistTitle)
+      const title = playlistTitle;
       if (playlist.length === 5) {
         axios.post("/api/playlists", 
         {[title]: playlist},
@@ -151,8 +151,13 @@ function ReppyFiveMakePlaylistmodal({setMakePlaylistModalOpen}) {
             <InputImgPreview>
               {imageSrc && <InputImg src={imageSrc} alt="preview-image"/>}
             </InputImgPreview>
-            <InputTitle type="text" placeholder="Enter Title:)"/>
-            <InputTitle type="text" onChange={changePlaylistTitle} placeholder="Show about your playlist:)"/>
+            <InputTitle 
+              type="text" 
+              value={playlistTitle} 
+              onChange={changePlaylistTitle} 
+              placeholder="Enter Title:)"
+            />
+            <InputTitle type="text" placeholder="Show about your playlist:)"/>
             {playlist !== undefined &&
             playlist.map((song) => (
               <Li key={song.id}>
